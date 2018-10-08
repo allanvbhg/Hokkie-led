@@ -1,0 +1,18 @@
+// This makes it so that the sensor detects presure and turns it into a signal that poweres the rest. //
+
+forever(function () {
+    if (pins.A1.analogRead() < 1016) {
+        pins.A2.analogWrite(0)
+        light.setBrightness(12)
+        light.setAll(0x00ff00)
+    } else {
+        pins.A2.analogWrite(50)
+        light.setBrightness(12)
+        light.setAll(0xff0000)
+    }
+})
+
+// When the pressure is high enouhg the led on the outside of the dressing room wil change from green to red to indicate that it's in use. //
+// At the same time a console at the checkout turns on to notify the staff that someone entered a dressing room. We now need to make it so //
+// staff can manually reset the led indicator to show it has been checked. so only the red leds on the console //
+// need to be reset to green and the led at the actual dressing room needs to stay red. //
