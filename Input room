@@ -15,6 +15,22 @@ forever(function () {
 // Now I have to find a way to turn on the external led's so people actually know when the dressing room is occupied and that the staff //
 // knows it is in use. //
 
+// Version 2 //
+
+forever(function () {
+    if (pins.A1.analogRead() < 1016) {
+        pins.A2.analogWrite(0)
+        light.setBrightness(12)
+        light.setAll(0xff00ff)
+    } else {
+        pins.A2.analogWrite(100)
+        light.setBrightness(12)
+        light.setAll(0x00ffff)
+    }
+})
+
+// I made a bunch of updates to make the threshold work //
+
 // Version 3 //
 
 // This makes it so that the sensor detects presure and turns it into a signal that poweres the rest. //
