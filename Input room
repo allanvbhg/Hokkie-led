@@ -1,3 +1,22 @@
+// Version 1 //
+
+// This is one of the first codes I made for this project. It basically just turns on the lights on the playground and nothing else //
+
+forever(function () {
+    if (pins.A1.analogRead() < 1010) {
+        light.setBrightness(12)
+        light.setAll(0x00ff00)
+    } else {
+        light.setBrightness(12)
+        light.setAll(0xff0000)
+    }
+})
+
+// Now I have to find a way to turn on the external led's so people actually know when the dressing room is occupied and that the staff //
+// knows it is in use. //
+
+// Version 3 //
+
 // This makes it so that the sensor detects presure and turns it into a signal that poweres the rest. //
 
 forever(function () {
@@ -18,3 +37,6 @@ forever(function () {
 // need to be reset to green and the led at the actual dressing room needs to stay red. //
 
 TEST Commit
+
+// Version 2.0 //
+
