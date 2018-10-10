@@ -16,3 +16,5 @@ forever(function () {
 // At the same time a console at the checkout turns on to notify the staff that someone entered a dressing room. We now need to make it so //
 // staff can manually reset the led indicator to show it has been checked. so only the red leds on the console //
 // need to be reset to green and the led at the actual dressing room needs to stay red. //
+
+TEST Commit
